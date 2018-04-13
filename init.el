@@ -75,9 +75,6 @@
   :ensure t
   :config (global-company-mode) (setq company-idle-delay t))
 
-;;(use-package helm
-;;  :ensure t)
-
 (use-package org
   :ensure t
   :bind (("\C-c l" . org-store-link)
@@ -86,11 +83,6 @@
 	 ("\C-c b" . org-iswitchb))
   :config
   (setq org-log-done t))
-
-;; Enable IDO everywhere
-;;(ido-mode 1)
-;;(setq ido-everywhere t)
-;;(setq ido-enable-flex-matching t)
 
 ;; Theme
 (load-theme 'solarized-light t)
