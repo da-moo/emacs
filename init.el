@@ -99,7 +99,7 @@
  '(ns-command-modifier (quote control))
  '(package-selected-packages
    (quote
-    (company counsel ace-window which-key try use-package solarized-theme oceanic-theme org))))
+    (zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
