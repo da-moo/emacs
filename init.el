@@ -45,6 +45,9 @@
 (use-package solarized-theme
   :ensure t)
 
+(use-package oceanic-theme
+  :ensure t)
+
 (use-package counsel
   :ensure t
   :bind (("\C-s" . swiper)
@@ -67,6 +70,10 @@
   (setq enable-recursive-minibuffers t)
   (define-key minibuffer-local-map (kbd "C-r")
   'counsel-minibuffer-history))
+
+(use-package company
+  :ensure t
+  :config (global-company-mode) (setq company-idle-delay t))
 
 ;;(use-package helm
 ;;  :ensure t)
@@ -102,7 +109,7 @@
  '(ns-command-modifier (quote control))
  '(package-selected-packages
    (quote
-    (ace-window which-key try use-package solarized-theme oceanic-theme org helm))))
+    (company counsel ace-window which-key try use-package solarized-theme oceanic-theme org))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
