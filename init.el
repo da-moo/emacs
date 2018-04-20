@@ -88,6 +88,11 @@
   :config
   (setq org-log-done t))
 
+(use-package nov
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.epub\\'"
+					  . nov-mode)))
+
 ;;;;;;;;;;;;;;;;;
 ;; Auto-config ;;
 ;;;;;;;;;;;;;;;;;
@@ -99,7 +104,7 @@
  '(ns-command-modifier (quote control))
  '(package-selected-packages
    (quote
-    (zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
+    (nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
