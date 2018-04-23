@@ -1,6 +1,13 @@
 ;; Basic interface stuff
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
+(set-default-font "Inconsolata")
+
+;; Change font size based on resolution
+(when (display-graphic-p)
+  (if (>= (x-display-pixel-height) 1440)
+      (set-face-attribute 'default nil :height 200)
+    (set-face-attribute 'default nil :height 120)))
 
 ;; Misc
 (global-set-key (kbd "M-o") 'other-window)
@@ -105,10 +112,3 @@
  '(package-selected-packages
    (quote
     (nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:height 200 :family "Inconsolata")))))
