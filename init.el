@@ -5,7 +5,7 @@
 
 ;; Change font size based on resolution
 (when (display-graphic-p)
-  (if (>= (x-display-pixel-height) 1440)
+  (if (>= (display-pixel-height) 1440)
       (set-face-attribute 'default nil :height 200)
     (set-face-attribute 'default nil :height 120)))
 
