@@ -4,10 +4,17 @@
 (set-default-font "Inconsolata")
 
 ;; Change font size based on resolution
-(when (display-graphic-p)
-  (if (>= (display-pixel-height) 1440)
-      (set-face-attribute 'default nil :height 200)
-    (set-face-attribute 'default nil :height 120)))
+;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
+(defun fontify-frame (&optional frame)
+  (interactive)
+  (let ((target (or frame (window-frame)))))
+  (when (display-graphic-p)
+    (if (>= (display-pixel-height) 1440)
+	(set-face-attribute 'default nil :height 200)
+      (set-face-attribute 'default nil :height 120))))
+
+(fontify-frame)
+(add-hook 'focus-in-hook 'fontify-frame)
 
 ;; Misc
 (global-set-key (kbd "M-o") 'other-window)
