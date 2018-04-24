@@ -107,6 +107,9 @@
   :config (add-to-list 'auto-mode-alist '("\\.epub\\'"
 					  . nov-mode)))
 
+(use-package markdown-mode
+  :ensure t)
+
 ;;;;;;;;;;;;;;;;;
 ;; Auto-config ;;
 ;;;;;;;;;;;;;;;;;
@@ -118,4 +121,4 @@
  '(ns-command-modifier (quote control))
  '(package-selected-packages
    (quote
-    (nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
+    (markdown-mode nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
