@@ -1,7 +1,8 @@
 ;; Basic interface stuff
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-(set-default-font "Inconsolata")
+(set-default-font "Hack")
+(global-display-line-numbers-mode)
 
 ;; Change font size based on resolution
 ;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
