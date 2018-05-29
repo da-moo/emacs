@@ -4,6 +4,10 @@
 (set-default-font "Hack")
 (global-display-line-numbers-mode)
 
+;; Mac specific config
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
 ;; Change font size based on resolution
 ;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
 (defun fontify-frame (&optional frame)
@@ -12,7 +16,7 @@
   (when (display-graphic-p)
     (if (>= (display-pixel-height) 1440)
 	(set-face-attribute 'default nil :height 200)
-      (set-face-attribute 'default nil :height 120))))
+      (set-face-attribute 'default nil :height 160))))
 
 (fontify-frame)
 (add-hook 'focus-in-hook 'fontify-frame)
