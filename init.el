@@ -30,8 +30,16 @@
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-i") 'imenu)
 (defalias 'list-buffers 'ibuffer-other-window)
+
+;; Enable whitespace minor mode only for programming modes
+;; Taken from: https://emacs.stackexchange.com/a/40624
+(require 'whitespace)
 (setq whitespace-style '(face trailing lines-tail))
-(global-whitespace-mode t)
+(define-global-minor-mode my-global-whitespace-mode whitespace-mode
+  (lambda ()
+    (when (derived-mode-p 'prog-mode)
+      (whitespace-mode))))
+(my-global-whitespace-mode 1)
 
 ;; Set up packages
 (require 'package)
