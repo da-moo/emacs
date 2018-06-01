@@ -7,6 +7,11 @@
 ;; Mac specific config
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
+(setq mac-option-modifier 'meta)
+
+;; Use homebrew provided GNU ls for dired
+(if (eq system-type 'darwin)
+    (setq insert-directory-program "/usr/local/bin/gls"))
 
 ;; Change font size based on resolution
 ;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
@@ -25,6 +30,8 @@
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-i") 'imenu)
 (defalias 'list-buffers 'ibuffer-other-window)
+(setq whitespace-style '(face trailing lines-tail))
+(global-whitespace-mode t)
 
 ;; Set up packages
 (require 'package)
