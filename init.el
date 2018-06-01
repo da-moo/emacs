@@ -30,6 +30,7 @@
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-i") 'imenu)
 (defalias 'list-buffers 'ibuffer-other-window)
+(setq tramp-default-method "ssh")
 
 ;; Enable whitespace minor mode only for programming modes
 ;; Taken from: https://emacs.stackexchange.com/a/40624
