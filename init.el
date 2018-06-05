@@ -64,6 +64,13 @@
 (setq use-package-always-ensure t)
 
 ;; Custom packages
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+;;(setq auto-package-update-hide-results t)
+  (setq auto-package-update-interval 1)
+  (auto-package-update-maybe))
+
 (use-package try)
 
 (use-package magit
