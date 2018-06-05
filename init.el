@@ -148,6 +148,27 @@
 
 (use-package markdown-mode)
 
+(use-package flyspell
+  :init
+  (setq ispell-dictionary "en_US")
+  (setq ispell-program-name (executable-find "hunspell"))
+  (setq ispell-really-hunspell t)
+  :hook (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode)
+  :config
+  (unbind-key "C-." flyspell-mode-map))
+
+(use-package flyspell-correct
+  :after flyspell
+  :commands (flyspell-correct-word-generic
+	     flyspell-correct-previous-word-generic)
+  :bind (:map flyspell-mode-map
+	      ("C-;" . flyspell-correct-previous-word-generic)))
+
+(use-package flyspell-correct-ivy
+  :commands (flyspell-correct-ivy)
+  :init (setq flyspell-correct-interface #'flyspell-correct-ivy))
+
 ;;;;;;;;;;;;;;;;;
 ;; Auto-config ;;
 ;;;;;;;;;;;;;;;;;
