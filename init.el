@@ -13,6 +13,7 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 (setq mac-option-modifier 'meta)
+(setq ns-command-modifier (quote control))
 
 ;; Use homebrew provided GNU ls for dired
 (if (eq system-type 'darwin)
@@ -147,7 +148,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ns-command-modifier (quote control))
  '(package-selected-packages
    (quote
     (markdown-mode nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
