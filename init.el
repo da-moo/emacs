@@ -17,7 +17,8 @@
 
 ;; Use homebrew provided GNU ls for dired
 (if (eq system-type 'darwin)
-    (setq insert-directory-program "/usr/local/bin/gls"))
+    (setq insert-directory-program "/usr/local/bin/gls"
+	  exec-path (append '("/usr/local/bin/") exec-path)))
 
 ;; Change font size based on resolution
 ;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
