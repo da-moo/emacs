@@ -3,6 +3,11 @@
 (tool-bar-mode -1)
 (set-default-font "Hack")
 (global-display-line-numbers-mode)
+(fset 'yes-or-no-p 'y-or-n-p)
+(show-paren-mode 1)
+
+;; Delete trailing whitespace before save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Mac specific config
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -31,6 +36,8 @@
 (global-set-key (kbd "M-i") 'imenu)
 (defalias 'list-buffers 'ibuffer-other-window)
 (setq tramp-default-method "ssh")
+(setq indent-tabs-mode nil)
+(setq fringes-outside-margins t)
 
 ;; Enable whitespace minor mode only for programming modes
 ;; Taken from: https://emacs.stackexchange.com/a/40624
