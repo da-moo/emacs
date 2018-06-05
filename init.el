@@ -142,6 +142,11 @@
   :config
   (setq org-log-done t))
 
+(use-package org-journal
+  :config
+  (setq org-journal-file-format "%Y-%m-%d.org")
+  (setq org-journal-dir "~/Nextcloud/org/journal"))
+
 (use-package nov
   :config (add-to-list 'auto-mode-alist '("\\.epub\\'"
 					  . nov-mode)))
