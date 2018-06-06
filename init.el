@@ -97,6 +97,8 @@
   ("C-x g e" . magit-ediff-resolve)
   ("C-x g r" . magit-rebase-interactive))
 
+(use-package magit-popup)
+
 (use-package which-key
   :config (which-key-mode))
 
