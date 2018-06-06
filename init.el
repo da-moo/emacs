@@ -186,6 +186,16 @@
   :commands (flyspell-correct-ivy)
   :init (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
+
+(use-package flycheck-posframe
+  :after flycheck
+  :hook (flycheck-mode . flycheck-posframe-mode)
+  :config
+  (flycheck-posframe-configure-pretty-defaults))
+
 ;;;;;;;;;;;;;;;;;
 ;; Auto-config ;;
 ;;;;;;;;;;;;;;;;;
