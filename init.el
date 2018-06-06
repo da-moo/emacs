@@ -1,7 +1,14 @@
+;;; init.el --- DaMoo's init.el
+;;;
+;;; Commentary:
+;;; My personal init.el while learning and using Emacs
+;;;
+;;; Code:
+
 ;; Basic interface stuff
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-(set-default-font "Hack")
+(set-frame-font "Hack")
 (global-display-line-numbers-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 (show-paren-mode 1)
@@ -36,6 +43,7 @@
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-i") 'imenu)
 (defalias 'list-buffers 'ibuffer-other-window)
+(require 'tramp)
 (setq tramp-default-method "ssh")
 (setq indent-tabs-mode nil)
 (setq fringes-outside-margins t)
@@ -60,6 +68,7 @@
 (unless (package-installed-p 'use-package)
 	(package-refresh-contents)
 	(package-install 'use-package))
+(require 'use-package)
 (setq use-package-always-ensure t)
 
 ;; Custom packages
@@ -188,3 +197,6 @@
  '(package-selected-packages
    (quote
     (markdown-mode nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
+
+(provide 'init.el)
+;;; init.el ends here
