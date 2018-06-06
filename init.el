@@ -26,18 +26,18 @@
 (if (eq system-type 'darwin)
     (setq insert-directory-program "/usr/local/bin/gls"))
 
-;; Change font size based on resolution
-;; Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4
-(defun fontify-frame (&optional frame)
+(defun resize-font-by-resolution ()
+  "Change font size based on resolution.
+Useful on a laptop where resolutions can change with external monitors.
+Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
   (interactive)
-  (let ((target (or frame (window-frame)))))
   (when (display-graphic-p)
     (if (>= (display-pixel-height) 1440)
 	(set-face-attribute 'default nil :height 200)
       (set-face-attribute 'default nil :height 160))))
 
-(fontify-frame)
-(add-hook 'focus-in-hook 'fontify-frame)
+(resize-font-by-resolution)
+(add-hook 'focus-in-hook 'resize-font-by-resolution)
 
 ;; Misc
 (global-set-key (kbd "M-o") 'other-window)
