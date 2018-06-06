@@ -194,8 +194,6 @@
   :after flycheck
   :hook (flycheck-mode . flycheck-posframe-mode)
   :config
-  (flycheck-posframe-configure-pretty-defaults))
-
 ;;;;;;;;;;;;;;;;;
 ;; Auto-config ;;
 ;;;;;;;;;;;;;;;;;
@@ -207,6 +205,9 @@
  '(package-selected-packages
    (quote
     (markdown-mode nov zenburn-theme which-key use-package try solarized-theme org oceanic-theme counsel company ace-window))))
+  (flycheck-posframe-configure-pretty-defaults)
+  (set-face-background 'flycheck-posframe-background-face
+		       (face-attribute 'secondary-selection :background)))
 
 (provide 'init.el)
 ;;; init.el ends here
