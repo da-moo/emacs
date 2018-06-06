@@ -8,7 +8,7 @@
 ;; Basic interface stuff
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-(set-frame-font "Hack")
+(set-face-attribute 'default nil :font "Hack")
 (global-display-line-numbers-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 (show-paren-mode 1)
