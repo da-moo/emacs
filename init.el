@@ -114,9 +114,9 @@
   :config
   (setq avy-keys '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)))
 
-(use-package solarized-theme)
-
-(use-package oceanic-theme)
+;; Extra themes
+;; (use-package solarized-theme)
+;; (use-package oceanic-theme)
 
 (use-package zenburn-theme
   :config (load-theme 'zenburn t))
