@@ -200,5 +200,14 @@ Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
   (set-face-background 'flycheck-posframe-background-face
 		       (face-attribute 'secondary-selection :background)))
 
+(use-package projectile
+  :config
+  (projectile-mode +1)
+  (setq projectile-completion-system 'ivy))
+
+(use-package counsel-projectile
+  :config
+  (setq counsel-projectile-mode t))
+
 (provide 'init.el)
 ;;; init.el ends here
