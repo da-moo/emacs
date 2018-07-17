@@ -11,7 +11,6 @@
 (set-face-attribute 'default nil :font "Hack")
 (global-display-line-numbers-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
-(show-paren-mode 1)
 
 ;; Delete trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -72,6 +71,12 @@ Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
 (setq use-package-always-ensure t)
 
 ;; Custom packages
+(use-package paren
+  :init
+  (setq show-paren-delay 0)
+  :config
+  (show-paren-mode))
+
 (use-package auto-package-update
   :config
   (setq auto-package-update-delete-old-versions t)
