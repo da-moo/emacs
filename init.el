@@ -71,11 +71,13 @@ Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
 (setq use-package-always-ensure t)
 
 ;; Custom packages
-(use-package paren
-  :init
-  (setq show-paren-delay 0)
+(use-package smartparens
   :config
-  (show-paren-mode))
+  (require 'smartparens-config)
+  (setq sp-show-pair-delay 0)
+  (show-smartparens-global-mode t)
+  :hook
+  (prog-mode . smartparens-mode))
 
 (use-package auto-package-update
   :config
@@ -213,6 +215,10 @@ Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
 (use-package counsel-projectile
   :config
   (setq counsel-projectile-mode t))
+
+(use-package ruby-mode
+  :init
+  (setq ruby-insert-encoding-magic-comment nil))
 
 (provide 'init.el)
 ;;; init.el ends here
