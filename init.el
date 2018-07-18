@@ -216,9 +216,47 @@ Based on https://gist.github.com/MatthewDarling/8c232b1780126275c3b4"
   :config
   (setq counsel-projectile-mode t))
 
+;;;;;;;;;;
+;; Ruby ;;
+;;;;;;;;;;
+
 (use-package ruby-mode
   :init
   (setq ruby-insert-encoding-magic-comment nil))
+
+;;;;;;; eglot
+
+;; (use-package eglot
+;;   :hook
+;;   (ruby-mode . eglot-ensure))
+
+;;;;;;; Robe
+
+;; (use-package robe
+;;   :after company
+;;   :config
+;;   (push 'company-robe company-backends)
+;;   :hook
+;;   (ruby-mode . robe-mode))
+
+;;;;;;; lsp-mode
+
+;; (use-package lsp-mode)
+
+;; (use-package lsp-ui
+;;   :after lsp-mode
+;;   :hook (lsp-mode . lsp-ui-mode))
+
+;; (use-package company-lsp
+;;   :after (lsp-mode company-mode)
+;;   :config
+;;   (push 'company-lsp company-backends))
+
+;; (use-package lsp-ruby
+;;   :after (ruby-mode flycheck-mode)
+;;   :config
+;;   (add-hook 'ruby-mode #'lsp-ruby-enable)
+;;   (setq lsp-hover-text-function 'lsp--text-document-signature-help))
 
 (provide 'init.el)
 ;;; init.el ends here
