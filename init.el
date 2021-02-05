@@ -109,7 +109,7 @@
 (setq visible-bell t)
 
 ;; Default fill column
-(setq fill-column 120)
+(setq-default fill-column 120)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Programming Modes Config ;;
