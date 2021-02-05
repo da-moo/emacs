@@ -1,8 +1,8 @@
-/elpa
-/auto-save-list
-ido.last
-*~
-recentf
-\#*\#
-/nov-places
+# TRAMP history
 tramp
+
+# Emacs temporary files
+*~
+
+# straight.el local copies
+straight/*
