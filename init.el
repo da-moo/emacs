@@ -71,6 +71,17 @@
 (use-package which-key
   :config (which-key-mode))
 
+;; Spell check using aspell
+(use-package flyspell
+  :hook (prog-mode . flyspell-prog-mode)
+  (text-mode . flyspell-mode)
+  :config
+  (setq ispell-dictionary "en_US"
+	ispell-program-name (executable-find "aspell")
+	ispell-really-aspell t
+	flyspell-delay 0.25)
+  (unbind-key "C-." flyspell-mode-map))
+
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
