@@ -82,6 +82,13 @@
 	flyspell-delay 0.25)
   (unbind-key "C-." flyspell-mode-map))
 
+(use-package flyspell-correct
+  :requires flyspell
+  :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
+
+(use-package flyspell-correct-avy-menu
+  :requires flyspell-correct)
+
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
