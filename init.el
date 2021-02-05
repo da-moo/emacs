@@ -89,6 +89,12 @@
 (use-package flyspell-correct-avy-menu
   :requires flyspell-correct)
 
+;;;;;;;;;;;;;;;
+;; Key binds ;;
+;;;;;;;;;;;;;;;
+
+(bind-key "C-'" 'comment-line)
+
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
