@@ -98,6 +98,16 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
+(use-package lsp-mode
+  :init (setq lsp-keymap-prefix "C-c l")
+  :hook ((ruby-mode . lsp)
+	 (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package lsp-ui
+  :requires lsp-mode
+  :commands lsp-ui-mode)
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;

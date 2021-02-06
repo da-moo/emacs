@@ -6,3 +6,6 @@ tramp
 
 # straight.el local copies
 straight/*
+
+# lsp-mode files
+.lsp-session-v1
