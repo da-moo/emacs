@@ -1,4 +1,9 @@
 ;;; init.el --- mine!
+;;;
+;;; Commentary:
+;;; My personal init.el while learning and using Emacs.
+;;;
+;;; Code:
 
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
@@ -89,6 +94,10 @@
 (use-package flyspell-correct-avy-menu
   :requires flyspell-correct)
 
+;; Flycheck for linting
+(use-package flycheck
+  :init (global-flycheck-mode))
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;
@@ -120,3 +129,6 @@
 
 ;; Display visual column guide
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+
+(provide 'init.el)
+;;; init.el ends here
