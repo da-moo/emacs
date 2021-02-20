@@ -9,8 +9,8 @@
 (when (memq window-system '(mac ns x))
   (setenv "SHELL" "/bin/zsh")
   (load "~/.config/emacs/exec-path-from-shell/exec-path-from-shell.el")
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-envs '("PATH")))
+  (setq exec-path-from-shell-arguments nil)
+  (exec-path-from-shell-initialize))
 
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
