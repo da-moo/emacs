@@ -137,6 +137,12 @@
 ;; Default fill column
 (setq-default fill-column 120)
 
+;; Theme
+(load-theme 'tango-dark t)
+
+;; Default frame size
+(when window-system (set-frame-size (selected-frame) 120 64))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Programming Modes Config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
