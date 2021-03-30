@@ -126,6 +126,12 @@
   :requires lsp-mode
   :commands lsp-ui-mode)
 
+(use-package magit
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read)
+  :bind
+  ("C-x g" . magit-status))
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;
