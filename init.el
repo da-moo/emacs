@@ -8,15 +8,16 @@
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
 (set-face-attribute 'default nil :height 120)
+(set-face-attribute 'fixed-pitch-serif nil :font "DejaVu Sans Mono")
 
-;; Modes
-(fido-mode)
+;; Misc display
+(column-number-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Carry-over from old config ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq tramp-default-method "ssh") ;; Connect via /-:<target>:/path/to/file
+(setq-default tramp-default-method "ssh") ;; Connect via /-:<target>:/path/to/file
 (setq indent-tabs-mode nil)
 (setq require-final-newline t)
 ;; Remap some keys to more useful shortcuts
@@ -62,7 +63,8 @@
 
 ;; Learn keybindings interactively
 (use-package which-key
-  :config (which-key-mode))
+  :config (which-key-mode)
+  :custom (which-key-idle-delay 0.3))
 
 ;; Spell check using aspell
 (use-package flyspell
