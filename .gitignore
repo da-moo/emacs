@@ -4,8 +4,8 @@ tramp
 # Emacs temporary files
 *~
 
-# straight.el local copies
-straight/*
+# Local package archive
+elpa/*
 
 # lsp-mode files
 .lsp-session-v1

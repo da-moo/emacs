@@ -1,3 +1,0 @@
-[submodule "exec-path-from-shell"]
-	path = exec-path-from-shell
-	url = git@github.com:purcell/exec-path-from-shell.git

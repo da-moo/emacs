@@ -5,32 +5,9 @@
 ;;;
 ;;; Code:
 
-;; macOS bootstrap
-(when (memq window-system '(mac ns x))
-  (setenv "SHELL" "/bin/zsh")
-  (load "~/.config/emacs/exec-path-from-shell/exec-path-from-shell.el")
-  (setq exec-path-from-shell-arguments nil)
-  (exec-path-from-shell-initialize))
-
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
 (set-face-attribute 'default nil :height 120)
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"]))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(fixed-pitch-serif ((t (:family "DejaVu Sans Mono")))))
 
 ;; Modes
 (fido-mode)
@@ -51,23 +28,27 @@
 ;; Package management ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; straight.el
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+(require 'package)
 
-;; use-package
-(setq straight-use-package-by-default t)
-(straight-use-package 'use-package)
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("org" . "https://orgmode.org/elpa/")
+			 ("elpa" . "https://elpa.gnu.org/packages/")))
+
+(package-initialize)
+(unless package-archive-contents (package-refresh-contents))
+
+;; Bootstrap `use-package'
+(unless (package-installed-p 'use-package)
+	(package-refresh-contents)
+	(package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; macOS bootstrap
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
