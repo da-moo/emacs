@@ -10,5 +10,8 @@ elpa/*
 # lsp-mode files
 .lsp-session-v1
 
+# Projectile
+projectile-bookmarks.eld
+
 # auto-package-update artifacts
 .last-package-update-day

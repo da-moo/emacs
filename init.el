@@ -140,6 +140,13 @@
   :bind
   ("C-x g" . magit-status))
 
+(use-package ripgrep)
+
+(use-package projectile
+  :init (projectile-mode +1)
+  :bind (:map projectile-mode-map
+	      ("C-c p" . projectile-command-map)))
+
 ;; Visual tweaks
 
 (use-package modus-themes
