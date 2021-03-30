@@ -5,6 +5,8 @@
 ;;;
 ;;; Code:
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
 (set-face-attribute 'default nil :height 120)
@@ -202,6 +204,8 @@
 
 ;; Display visual column guide
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
+
+(load custom-file)
 
 (provide 'init.el)
 ;;; init.el ends here
