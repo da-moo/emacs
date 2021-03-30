@@ -9,3 +9,6 @@ elpa/*
 
 # lsp-mode files
 .lsp-session-v1
+
+# auto-package-update artifacts
+.last-package-update-day
