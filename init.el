@@ -127,6 +127,7 @@
 (use-package lsp-mode
   :init (setq lsp-keymap-prefix "C-c l")
   :hook ((ruby-mode . lsp)
+	 (php-mode . lsp)
 	 (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
@@ -146,6 +147,10 @@
   :init (projectile-mode +1)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
+
+(use-package php-mode)
+
+(use-package ruby-mode)
 
 ;; Visual tweaks
 
