@@ -51,6 +51,23 @@
   :config
   (exec-path-from-shell-initialize))
 
+;; ivy, counsel, & swiper
+(use-package counsel
+  :bind (("C-s" . swiper)
+	 ("M-x" . counsel-M-x)
+	 ("C-x C-f" . counsel-find-file)
+	 ("C-x b" . counsel-ibuffer)
+	 :map minibuffer-local-map
+	 ("C-r" . counsel-minibuffer-history))
+  :custom (ivy-initial-inputs-alist nil) ;; Don't start searches with ^
+  :config
+  (ivy-mode 1))
+
+(use-package ivy-rich
+  :custom (ivy-rich-path-style 'abbrev)
+  :requires ivy
+  :config (ivy-rich-mode 1))
+
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
   :bind ("C-." . avy-goto-char-2)
