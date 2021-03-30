@@ -135,6 +135,10 @@
   :requires lsp-mode
   :commands lsp-ui-mode)
 
+(use-package lsp-ivy
+  :requires lsp-mode
+  :commands lsp-ivy-workspace-symbol)
+
 (use-package magit
   :config
   (setq magit-completing-read-function 'ivy-completing-read)

@@ -3,12 +3,14 @@ tramp
 
 # Emacs temporary files
 *~
+transient/*
 
 # Local package archive
 elpa/*
 
 # lsp-mode files
 .lsp-session-v1
+lsp-cache/*
 
 # Projectile
 projectile-bookmarks.eld
