@@ -68,6 +68,17 @@
   :requires ivy
   :config (ivy-rich-mode 1))
 
+;; helpful
+(use-package helpful
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
   :bind ("C-." . avy-goto-char-2)
