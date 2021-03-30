@@ -140,6 +140,18 @@
   :bind
   ("C-x g" . magit-status))
 
+;; Visual tweaks
+
+(use-package modus-themes
+  :init
+  (setq modus-themes-bold-constructs t
+	modus-themes-slanted-constructs t
+	modus-themes-syntax 'alt-syntax
+	modus-themes-region 'bg-only
+	modus-themes-diffs nil)
+  (modus-themes-load-themes)
+  :config (modus-themes-load-vivendi))
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;
@@ -161,9 +173,6 @@
 
 ;; Default fill column
 (setq-default fill-column 120)
-
-;; Theme
-(load-theme 'tango-dark t)
 
 ;; Default frame size
 (when window-system (set-frame-size (selected-frame) 120 64))
