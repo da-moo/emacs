@@ -170,6 +170,9 @@
   (modus-themes-load-themes)
   :config (modus-themes-load-vivendi))
 
+(use-package mode-line-bell
+  :config (mode-line-bell-mode))
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;
@@ -185,9 +188,6 @@
 
 ;; Change default dired switches
 (setq dired-listing-switches "-alh --group-directories-first")
-
-;; Visible bell (flash frame)
-(setq visible-bell t)
 
 ;; Default fill column
 (setq-default fill-column 120)
