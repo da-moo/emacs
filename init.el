@@ -74,7 +74,8 @@
 (use-package god-mode
   :custom
   (god-mode-enable-function-key-translation nil)
-  :bind (("<end>" . #'god-local-mode)
+  :bind (("<escape>" . #'god-local-mode)
+	 ("<end>" . #'god-local-mode)
 	 :map god-local-mode-map
 	 ("z" . #'repeat)
 	 ("i" . #'god-local-mode))
