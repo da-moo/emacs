@@ -61,6 +61,11 @@
   :config
   (exec-path-from-shell-initialize))
 
+;; Use homebrew provided GNU ls for dired
+(if (eq system-type 'darwin)
+    (progn (setq insert-directory-program "/usr/local/bin/gls")
+	   (setq ns-command-modifier 'meta)))
+
 ;; Learn keybindings interactively
 (use-package which-key
   :config (which-key-mode)
