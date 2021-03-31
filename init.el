@@ -67,13 +67,12 @@
   :custom (which-key-idle-delay 0.3))
 
 (use-package god-mode
-  :demand
   :custom
   (god-mode-enable-function-key-translation nil)
-  :bind (("<end>" . god-local-mode)
+  :bind (("<end>" . #'god-local-mode)
 	 :map god-local-mode-map
-	 ("z" . repeat)
-	 ("i" . god-local-mode))
+	 ("z" . #'repeat)
+	 ("i" . #'god-local-mode))
   :config
   (god-mode-all)
   (which-key-enable-god-mode-support))
