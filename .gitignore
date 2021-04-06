@@ -1,19 +1,8 @@
-# TRAMP history
-tramp
-
-# Emacs temporary files
-*~
-transient/*
-
 # Local package archive
 elpa/*
 
-# lsp-mode files
-.lsp-session-v1
-lsp-cache/*
+# no-littering dirs
+etc/*
+!/etc/custom.el
 
-# Projectile
-projectile-bookmarks.eld
-
-# auto-package-update artifacts
-.last-package-update-day
+var/*

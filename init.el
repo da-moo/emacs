@@ -5,8 +5,6 @@
 ;;;
 ;;; Code:
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
 ;; Font
 (set-face-attribute 'default nil :font "Comic Mono")
 (set-face-attribute 'default nil :height 120)
@@ -46,6 +44,12 @@
 	(package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+(use-package no-littering
+  :custom
+  (auto-save-file-name-transforms
+   `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+  (custom-file (no-littering-expand-etc-file-name "custom.el")))
 
 (use-package auto-package-update
   :custom
