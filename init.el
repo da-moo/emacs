@@ -176,6 +176,7 @@
 
 (use-package projectile
   :init (projectile-mode +1)
+  :custom (projectile-sort-order 'recently-active)
   :bind (:map projectile-mode-map
 	      ("C-c p" . projectile-command-map)))
 
