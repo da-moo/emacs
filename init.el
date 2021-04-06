@@ -186,6 +186,7 @@
 ;; Visual tweaks
 
 (use-package modus-themes
+  :pin melpa
   :init
   (setq modus-themes-bold-constructs t
 	modus-themes-slanted-constructs t
@@ -193,6 +194,7 @@
 	modus-themes-region 'bg-only
 	modus-themes-diffs nil)
   (modus-themes-load-themes)
+  :bind ("<f5>" . modus-themes-toggle)
   :config (modus-themes-load-vivendi))
 
 (use-package mode-line-bell
