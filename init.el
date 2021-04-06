@@ -183,6 +183,11 @@
 
 (use-package ruby-mode)
 
+(use-package web-mode
+  :custom (web-mode-markup-indent-offset 2)
+	  (web-mode-code-indent-offset 2)
+  :config (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode)))
+
 ;; Visual tweaks
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
