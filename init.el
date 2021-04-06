@@ -168,6 +168,10 @@
   :bind
   ("C-x g" . magit-status))
 
+(use-package org
+  :ensure org-plus-contrib
+  :pin org)
+
 (use-package ripgrep)
 
 (use-package projectile
