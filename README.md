@@ -1,7 +1,7 @@
-# emacs.d
+# Emacs
 
-My emacs configuration
+My Emacs configuration. I follow the XDG-compatible directory schema and have this repository cloned under `~/.config/emacs`
 
 ## License
 
-All code and documentation specific to this configuration is licensed under GPLv3
+The Unlicense. Refer to the LICENSE file provided in the repository.
