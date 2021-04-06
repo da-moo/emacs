@@ -184,6 +184,8 @@
 (use-package ruby-mode)
 
 ;; Visual tweaks
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package modus-themes
   :pin melpa
