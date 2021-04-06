@@ -241,5 +241,8 @@
 
 (load custom-file)
 
+;; Restore garbage collector settings for runtime
+(setq gc-cons-threshold (* 20 1000 1000))
+
 (provide 'init.el)
 ;;; init.el ends here
