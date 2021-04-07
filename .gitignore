@@ -1,6 +1,9 @@
 # Local package archive
 /elpa
 
+# native-comp cache
+/eln-cache
+
 # no-littering dirs
 /etc
 /var
