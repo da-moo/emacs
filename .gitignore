@@ -1,8 +1,9 @@
 # Local package archive
-elpa/*
+/elpa
 
 # no-littering dirs
-etc/*
-!/etc/custom.el
+/etc
+/var
 
-var/*
+# Exclusions
+!/etc/custom.el
