@@ -5,26 +5,6 @@
 ;;;
 ;;; Code:
 
-;; Font
-(set-face-attribute 'default nil :font "Comic Mono")
-(set-face-attribute 'default nil :height 120)
-(set-face-attribute 'fixed-pitch-serif nil :font "DejaVu Sans Mono")
-
-;; Misc display
-(column-number-mode)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Carry-over from old config ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(fset 'yes-or-no-p 'y-or-n-p)
-(setq-default tramp-default-method "ssh") ;; Connect via /-:<target>:/path/to/file
-(setq indent-tabs-mode nil)
-(setq require-final-newline t)
-;; Remap some keys to more useful shortcuts
-(global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-i") 'imenu)
-(defalias 'list-buffers 'ibuffer-other-window)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Package management ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -49,6 +29,42 @@
 	(package-install 'use-package))
 (require 'use-package)
 (setq use-package-always-ensure t)
+
+;;;;;;;;;;
+;; Misc ;;
+;;;;;;;;;;
+
+;; Replace DAbbrev with Hippie Expand
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
+
+;; Change default dired switches
+(setq dired-listing-switches "-alh --group-directories-first")
+
+;; Default fill column
+(setq-default fill-column 120)
+
+;; Default frame size
+(when window-system (set-frame-size (selected-frame) 120 64))
+
+;; Font
+(set-face-attribute 'default nil :font "Comic Mono")
+(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'fixed-pitch-serif nil :font "DejaVu Sans Mono")
+
+;; Misc display
+(column-number-mode)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq-default tramp-default-method "ssh") ;; Connect via /-:<target>:/path/to/file
+(setq indent-tabs-mode nil)
+(setq require-final-newline t)
+;; Remap some keys to more useful shortcuts
+(global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-i") 'imenu)
+(defalias 'list-buffers 'ibuffer-other-window)
+
+;;;;;;;;;;;;;;;;;;;;;;
+;; use-package uses ;;
+;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package no-littering
   :custom
@@ -218,22 +234,6 @@
 ;;;;;;;;;;;;;;;
 
 (bind-key "C-'" 'comment-line)
-
-;;;;;;;;;;
-;; Misc ;;
-;;;;;;;;;;
-
-;; Replace DAbbrev with Hippie Expand
-(global-set-key [remap dabbrev-expand] 'hippie-expand)
-
-;; Change default dired switches
-(setq dired-listing-switches "-alh --group-directories-first")
-
-;; Default fill column
-(setq-default fill-column 120)
-
-;; Default frame size
-(when window-system (set-frame-size (selected-frame) 120 64))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Programming Modes Config ;;
