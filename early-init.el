@@ -5,6 +5,10 @@
 ;;;
 ;;; Code:
 
+;; Prevent Emacs from blinding us on startup
+(add-to-list 'default-frame-alist '(background-color . "black"))
+(add-to-list 'default-frame-alist '(foreground-color . "white"))
+
 ;; If we're using native-compilation, silence warnings
 (if (and (fboundp 'native-comp-available-p)
        (native-comp-available-p))
