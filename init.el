@@ -234,6 +234,11 @@
 (use-package mode-line-bell
   :config (mode-line-bell-mode))
 
+;; Requires external dependencies:
+;; cmake, libtool, libvterm
+(use-package vterm
+  :ensure-system-package cmake)
+
 ;;;;;;;;;;;;;;;
 ;; Key binds ;;
 ;;;;;;;;;;;;;;;
