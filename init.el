@@ -30,6 +30,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(use-package use-package-ensure-system-package
+  :custom (system-packages-use-sudo t))
+
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
@@ -88,8 +91,9 @@
 
 ;; Use homebrew provided GNU ls for dired
 (if (eq system-type 'darwin)
-    (progn (setq insert-directory-program "/usr/local/bin/gls")
-	   (setq ns-command-modifier 'meta)))
+    (setq insert-directory-program "/usr/local/bin/gls"
+	  ns-command-modifier 'meta
+	  system-packages-use-sudo nil))
 
 ;; Learn keybindings interactively
 (use-package which-key
@@ -193,7 +197,8 @@
   :ensure org-plus-contrib
   :pin org)
 
-(use-package ripgrep)
+(use-package ripgrep
+  :ensure-system-package (rg . ripgrep))
 
 (use-package projectile
   :init (projectile-mode +1)
