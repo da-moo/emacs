@@ -227,7 +227,6 @@
   :pin melpa
   :init
   (setq modus-themes-bold-constructs t
-	modus-themes-slanted-constructs t
 	modus-themes-syntax 'alt-syntax
 	modus-themes-region 'bg-only
 	modus-themes-diffs nil)
