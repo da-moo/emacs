@@ -62,8 +62,8 @@
 (when window-system (set-frame-size (selected-frame) 120 64))
 
 ;; Font
-(set-face-attribute 'default nil :font "Comic Mono")
-(set-face-attribute 'default nil :height 120)
+(set-face-attribute 'default nil :font "Comic Mono" :height 120)
+(set-face-attribute 'fixed-pitch nil :font "Comic Mono")
 (set-face-attribute 'fixed-pitch-serif nil :font "DejaVu Sans Mono")
 
 ;; Misc display
