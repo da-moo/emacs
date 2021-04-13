@@ -33,6 +33,18 @@
 (use-package use-package-ensure-system-package
   :custom (system-packages-use-sudo t))
 
+;; macOS bootstrap
+(use-package exec-path-from-shell
+  :if (memq window-system '(mac ns))
+  :config
+  (exec-path-from-shell-initialize))
+
+;; Use homebrew provided GNU ls for dired
+(if (eq system-type 'darwin)
+    (setq insert-directory-program "/usr/local/bin/gls"
+	  ns-command-modifier 'meta
+	  system-packages-use-sudo nil))
+
 ;;;;;;;;;;
 ;; Misc ;;
 ;;;;;;;;;;
@@ -82,18 +94,6 @@
   (auto-package-update-interval 1)
   :config
   (auto-package-update-maybe))
-
-;; macOS bootstrap
-(use-package exec-path-from-shell
-  :if (memq window-system '(mac ns))
-  :config
-  (exec-path-from-shell-initialize))
-
-;; Use homebrew provided GNU ls for dired
-(if (eq system-type 'darwin)
-    (setq insert-directory-program "/usr/local/bin/gls"
-	  ns-command-modifier 'meta
-	  system-packages-use-sudo nil))
 
 ;; Learn keybindings interactively
 (use-package which-key
