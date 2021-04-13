@@ -140,6 +140,10 @@
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
 
+;; Improve info pages
+(use-package info-colors
+  :hook ((Info-selection . info-colors-fontify-node)))
+
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
   :bind ("C-." . avy-goto-char-2)
