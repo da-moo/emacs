@@ -133,6 +133,10 @@
 (use-package info-colors
   :hook ((Info-selection . info-colors-fontify-node)))
 
+(use-package info
+  :ensure nil
+  :hook (Info-mode . variable-pitch-mode))
+
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
   :bind ("C-." . avy-goto-char-2)
