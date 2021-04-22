@@ -62,9 +62,10 @@
 (when window-system (set-frame-size (selected-frame) 120 64))
 
 ;; Font
-(set-face-attribute 'default nil :font "Comic Mono" :height 120)
-(set-face-attribute 'fixed-pitch nil :font "Comic Mono")
-(set-face-attribute 'fixed-pitch-serif nil :font "DejaVu Sans Mono")
+(set-face-attribute 'default nil :family "Comic Mono" :height 120)
+(set-face-attribute 'fixed-pitch nil :inherit 'default)
+(set-face-attribute 'fixed-pitch-serif nil :family "DejaVu Sans Mono" :inherit 'default)
+(set-face-attribute 'variable-pitch nil :family "Inter" :inherit 'default)
 
 ;; Misc display
 (column-number-mode)
