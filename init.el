@@ -68,6 +68,7 @@
 (set-face-attribute 'variable-pitch nil :family "Inter" :inherit 'default)
 
 ;; Misc display
+(setq frame-resize-pixelwise t)
 (column-number-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq-default tramp-default-method "ssh") ;; Connect via /-:<target>:/path/to/file
