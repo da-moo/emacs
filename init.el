@@ -53,7 +53,7 @@
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
 ;; Change default dired switches
-(setq dired-listing-switches "-alh --group-directories-first")
+(setq dired-listing-switches "-ahlv --group-directories-first")
 
 ;; Default fill column
 (setq-default fill-column 120)
