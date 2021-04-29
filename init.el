@@ -190,6 +190,16 @@
   :requires lsp-mode
   :commands lsp-ivy-workspace-symbol)
 
+(use-package company
+  :after lsp
+  :hook (lsp-mode . company-mode)
+  :bind
+  (:map company-active-map ("<tab>" . company-complete-selection))
+  (:map lsp-mode-map ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
 (use-package magit
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
