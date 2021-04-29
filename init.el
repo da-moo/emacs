@@ -252,7 +252,8 @@
 (use-package mode-line-bell
   :config (mode-line-bell-mode))
 
-(use-package treemacs)
+(use-package treemacs
+  :bind (:map global-map ("C-c t" . treemacs)))
 
 (use-package treemacs-projectile
   :after (treemacs projectile))
