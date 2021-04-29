@@ -209,6 +209,8 @@
 
 (use-package ruby-mode)
 
+(use-package yaml-mode)
+
 (use-package web-mode
   :custom (web-mode-markup-indent-offset 2)
 	  (web-mode-code-indent-offset 2)
