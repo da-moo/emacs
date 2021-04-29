@@ -194,7 +194,10 @@
 
 (use-package org
   :ensure org-plus-contrib
-  :pin org)
+  :pin org
+  :custom (org-M-RET-may-split-line '((default . t)
+				      (headline . nil)))
+  :hook (org-mode . variable-pitch-mode))
 
 (use-package ripgrep
   :ensure-system-package (rg . ripgrep))
