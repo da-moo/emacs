@@ -182,6 +182,10 @@
   :requires lsp-mode
   :commands lsp-ui-mode)
 
+(use-package lsp-treemacs
+  :after (treemacs lsp)
+  :config (lsp-treemacs-sync-mode 1))
+
 (use-package lsp-ivy
   :requires lsp-mode
   :commands lsp-ivy-workspace-symbol)
@@ -236,6 +240,14 @@
 
 (use-package mode-line-bell
   :config (mode-line-bell-mode))
+
+(use-package treemacs)
+
+(use-package treemacs-projectile
+  :after (treemacs projectile))
+
+(use-package treemacs-magit
+  :after (treemacs magit))
 
 ;; Requires external dependencies:
 ;; cmake, libtool, libvterm
