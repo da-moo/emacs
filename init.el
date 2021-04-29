@@ -174,6 +174,7 @@
   :init (setq lsp-keymap-prefix "C-c l")
   :hook ((ruby-mode . lsp)
 	 (php-mode . lsp)
+	 (yaml-mode . lsp)
 	 (lsp-mode . lsp-enable-which-key-integration))
   :config (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
   :commands lsp)
