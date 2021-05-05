@@ -62,10 +62,12 @@
 (when window-system (set-frame-size (selected-frame) 120 64))
 
 ;; Font
-(set-face-attribute 'default nil :family "Comic Mono" :height 120)
+(set-face-attribute 'default nil :family "DejaVu Sans Mono" :height 120)
 (set-face-attribute 'fixed-pitch nil :inherit 'default)
 (set-face-attribute 'fixed-pitch-serif nil :family "DejaVu Sans Mono" :inherit 'default)
 (set-face-attribute 'variable-pitch nil :family "Inter" :inherit 'default)
+(set-face-attribute 'mode-line nil :family "DejaVu Sans Mono")
+(set-face-attribute 'mode-line-inactive nil :family "DejaVu Sans Mono")
 
 ;; Misc display
 (setq frame-resize-pixelwise t)
@@ -96,6 +98,11 @@
   (auto-package-update-interval 1)
   :config
   (auto-package-update-maybe))
+
+(use-package all-the-icons)
+
+(use-package doom-modeline
+  :init (doom-modeline-mode 1))
 
 ;; Learn keybindings interactively
 (use-package which-key
