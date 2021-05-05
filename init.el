@@ -102,9 +102,6 @@
 
 (use-package all-the-icons)
 
-(use-package doom-modeline
-  :init (doom-modeline-mode 1))
-
 ;; Learn keybindings interactively
 (use-package which-key
   :config (which-key-mode)
@@ -256,6 +253,14 @@
   (modus-themes-load-themes)
   :bind ("<f5>" . modus-themes-toggle)
   :config (modus-themes-load-vivendi))
+
+(use-package doom-modeline
+  :after (modus-themes)
+  :init
+  (set-face-attribute 'mode-line nil :family me/monospace-fallback-font)
+  (set-face-attribute 'mode-line-inactive nil :family me/monospace-fallback-font)
+  (doom-modeline-mode 1)
+  :custom (doom-modeline-vcs-max-length 20))
 
 (use-package mode-line-bell
   :config (mode-line-bell-mode))
