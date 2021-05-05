@@ -214,6 +214,9 @@
   :bind
   ("C-x g" . magit-status))
 
+(use-package nov
+  :mode ("\\.epub\\'" . nov-mode))
+
 (use-package org
   :ensure org-plus-contrib
   :pin org
