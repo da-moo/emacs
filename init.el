@@ -229,9 +229,12 @@
 
 (use-package projectile
   :init (projectile-mode +1)
-  :custom (projectile-sort-order 'recently-active)
   :bind (:map projectile-mode-map
-	      ("C-c p" . projectile-command-map)))
+	      ("C-c p" . projectile-command-map))
+  :custom
+  (projectile-sort-order 'recently-active)
+  (projectile-project-search-path '("~/dev/" "~/work/")))
+
 
 (use-package php-mode)
 
