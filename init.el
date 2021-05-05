@@ -300,8 +300,6 @@
 ;; Display visual column guide
 (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 
-(load custom-file)
-
 ;; Restore garbage collector settings for runtime
 (setq gc-cons-threshold (* 20 1000 1000))
 
