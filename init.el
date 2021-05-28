@@ -17,7 +17,7 @@
        (setq package-native-compile t))
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
+			 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 			 ("elpa" . "https://elpa.gnu.org/packages/")))
 
 (package-initialize)
@@ -219,7 +219,7 @@
 
 (use-package org
   :ensure org-plus-contrib
-  :pin org
+  :pin nongnu
   :custom (org-M-RET-may-split-line '((default . t)
 				      (headline . nil)))
   :hook (org-mode . variable-pitch-mode))
