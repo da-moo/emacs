@@ -145,7 +145,7 @@
 
 ;; Jump to any character on screen (similar to vim-easymotion)
 (use-package avy
-  :bind ("C-." . avy-goto-char-2)
+  :bind ("C-." . avy-goto-char)
   :config
   (setq avy-keys '(?a ?o ?e ?u ?i ?d ?h ?t ?n ?s)))
 
