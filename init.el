@@ -62,13 +62,13 @@
 (when window-system (set-frame-size (selected-frame) 120 64))
 
 ;; Font
-(defvar me/monospace-font "Comic Mono")
+(defvar me/monospace-font "DejaVu Sans Mono")
 (defvar me/monospace-fallback-font "DejaVu Sans Mono")
 (defvar me/proportional-font "Inter")
 (set-face-attribute 'default nil :family me/monospace-font :height 120)
 (set-face-attribute 'fixed-pitch nil :family me/monospace-font)
 (set-face-attribute 'fixed-pitch-serif nil :family me/monospace-font)
-(set-face-attribute 'variable-pitch nil :family me/proportional-font)
+(set-face-attribute 'variable-pitch nil :family me/proportional-font :height 140)
 
 ;; Misc display
 (setq frame-resize-pixelwise t)
