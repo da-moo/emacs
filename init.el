@@ -218,7 +218,7 @@
   :mode ("\\.epub\\'" . nov-mode))
 
 (use-package org
-  :ensure org-plus-contrib
+  :ensure org-contrib
   :pin nongnu
   :custom (org-M-RET-may-split-line '((default . t)
 				      (headline . nil)))
